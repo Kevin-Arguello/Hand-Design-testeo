@@ -1,3 +1,7 @@
+:root{
+    --btn-footer: rgb(255, 255, 255);
+    --text-footer: rgb(105, 105, 105);
+}
 *{
     margin: 0;
     padding: 0;
@@ -87,6 +91,9 @@ li a:hover{
     }
     .text_1{
         margin-top: 10%;
+    }
+    .cajafooter{
+        flex-direction: column;
     }
 }
 .btn-0{
@@ -304,7 +311,6 @@ h3:hover{
     width: 80%;
     margin-top: 20px;
 }
-
 
 
 
