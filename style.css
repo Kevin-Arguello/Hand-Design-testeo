@@ -1,0 +1,423 @@
+:root{
+    --btn-footer: rgb(255, 255, 255);
+    --text-footer: rgb(105, 105, 105);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: rgb(212, 212, 212);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body::-webkit-scrollbar{
+    width: 15px;
+    margin-left: 2px;
+    background-color: rgb(0, 0, 0);
+}
+body::-webkit-scrollbar-thumb{
+    background: -webkit-linear-gradient(to top, #FF0080, #FF8C00, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #000000, #ffffff, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header{
+    width: 100%;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    box-shadow: 0px 2px 5px  rgb(102, 102, 102);
+    z-index: 2;
+}
+html{
+    scroll-behavior: smooth;
+}
+.logo {
+    width: 100px;
+}
+#btn_menu{
+    display: none;
+}
+header label{
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+header label:hover{
+    cursor: pointer;
+}
+.menu ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu li a{
+    display: block;
+    padding: 5px 30px;
+    margin: 10px 20px 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+li a:hover{
+    color: rgb(255, 255, 255);
+}
+@media (max-width:900px){
+
+    header label{
+        display: block;
+    }
+    .menu{
+        width: 100%;
+        margin-left: -102%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        background: #ffffff;
+        transition: all 0.5s;
+        box-shadow: 0px 0px 8px rgb(102, 102, 102);
+        z-index: 2;
+    }
+    .menu ul{
+        flex-direction: column;
+    }
+    #btn_menu:checked ~ .menu{
+        margin: 0;
+    }
+    .sec_1, .sec_2{
+        display: flex;
+        flex-direction: column;
+    }
+    .text_1{
+        margin-top: 10%;
+    }
+    .cajafooter{
+        flex-direction: column;
+    }
+}
+.btn-0{
+   width: 100px;
+   background-color: transparent;
+   border: solid 1.5px transparent;
+   transition: all 0.3s;
+   position: relative;
+}
+.btn-0::after{
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-top: 1.5px solid black;
+    border-left: 1.5px solid black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 1s;
+    z-index: -1;
+    opacity: 0;
+}
+.btn-0::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-bottom: 1.5px solid black;
+    border-right: 1.5px solid black;
+    position: absolute;
+    left: -1;
+    right: 0;
+    top: -1;
+    bottom: 0;
+    transition: all 1s;
+    z-index: -1;
+    opacity: 0;
+}
+.btn-0:hover::after{
+    background: rgb(0, 0, 0);
+    width: 158px;
+    height: 30px;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.btn-0:hover::before{
+    background: rgb(0, 0, 0);
+    width: 158px;
+    height: 30px;
+    transition: all 0.5s;
+    opacity: 1;
+}
+.sec_1{
+    background: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+.text_1{
+    width: 80%;
+    padding: 5%;
+}
+.img_1{
+    width: 100%;
+    display: flex;
+}
+h1{
+    margin-bottom: 5%;
+    font-size: 50px;
+}
+.sec_2{
+    background: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+.btn-1{
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: solid white;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 50px;
+    color: transparent;
+    text-align: end;
+    font-size: 20px;
+    padding: 0px 23px 0px 0px ;
+    z-index: 1;
+}
+.btn-1::before, .btn-1::after{
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    transition: 0.5s;
+}
+.btn-1:hover{
+    color: black;
+    transition: 0.5s;
+}
+.btn-1:hover::before, .btn-1:hover::after{
+    transform: translateX(40px);
+    transition: 0.5s ease;
+    width: 100px;
+}
+
+.btn-2{
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: solid rgb(0, 0, 0);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 50px;
+    color: transparent;
+    text-align: end;
+    font-size: 20px;
+    padding: 0px 23px 0px 0px ;
+    z-index: 0;
+}
+.btn-2::before, .btn-2::after{
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+    transition: 0.5s;
+}
+.btn-2:hover{
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+.btn-2:hover::before, .btn-2:hover::after{
+    transform: translateX(40px);
+    transition: 0.5s ease;
+    width: 100px;
+}
+.btn-3{
+    background: var(--text-footer);
+    display: flex;
+    color: black;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    height: 50px;
+    width: 100px;
+    border-style: none;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn-3:before,.btn-3::after{
+    content: "";
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 0px;
+    height: 50px;
+    background: var(--btn-footer);
+    transition: 0.5s;
+    z-index: -1;
+    opacity: 0;
+}
+.btn-3:hover::before, .btn-3:hover::after{
+    transition: 0.5s ease;
+    width: 100px;
+    opacity: 1;
+}
+.cajafooter{
+    background: rgb(31, 31, 31);
+    color: var(--text-footer);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textfooter{
+
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+h3{
+    margin-top: 10px;
+    font-weight: initial;
+    font-size: 15px;
+    cursor: pointer;
+}
+h3:hover{
+   color: var(--btn-footer);
+   /*text-shadow: var(--btn-footer) 0px 5px 7px;*/
+   transform: translateX(10px);
+   transition: 0.5s;
+}
+.redes{
+    border-top: solid white;
+    height: 2px;
+    width: 80%;
+    margin-top: 20px;
+}
+
+/*SECCION CAMARAS*//*SECCION CAMARAS*//*SECCION CAMARAS*/
+/*SECCION CAMARAS*//*SECCION CAMARAS*//*SECCION CAMARAS*/
+/*SECCION CAMARAS*//*SECCION CAMARAS*//*SECCION CAMARAS*/
+/*SECCION CAMARAS*//*SECCION CAMARAS*//*SECCION CAMARAS*/
+
+.A-sec1{
+    background: #EB5757;  
+    background: -webkit-linear-gradient(to right, #000000, #eb5757); 
+    background: linear-gradient(to right, #00000038, rgba(0, 0, 0, 0.575)),url(img/Nikon-D7500-Product-tour.gif);
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.A-text_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin: 11%;
+}
+.btn-4{
+    width: 160px;
+    height: 50px;
+    background: none;
+    border: solid white;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    margin-top: 50px;
+    color: transparent;
+    text-align: end;
+    font-size: 20px;
+    padding: 0px 12px 0px 0px ;
+    z-index: 1;
+}
+.btn-4::before, .btn-4::after{
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    transition: 0.5s;
+}
+.btn-4:hover{
+    color: black;
+    transition: 0.5s;
+}
+.btn-4:hover::before, .btn-4:hover::after{
+    transform: translateX(50px);
+    transition: 0.5s ease;
+    width: 100px;
+}
+
+/*SECCION MODELOS*//*SECCION MODELOS*//*SECCION MODELOS*/
+/*SECCION MODELOS*//*SECCION MODELOS*//*SECCION MODELOS*/
+/*SECCION MODELOS*//*SECCION MODELOS*//*SECCION MODELOS*/
+/*SECCION MODELOS*//*SECCION MODELOS*//*SECCION MODELOS*/
+
+.B-sec1{
+    background: #EB5757;  
+    background: -webkit-linear-gradient(to right, #000000, #eb5757); 
+    background: linear-gradient(to right, #00000038, rgba(0, 0, 0, 0.575)),url(img/cafe.png);
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.B-text_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin: 11%;
+}
+/*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*/
+/*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*/
+/*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*/
+/*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*//*SECCION LOGOTIPOS*/
+.C-sec1{
+    background: #EB5757;  
+    background: -webkit-linear-gradient(to right, #000000, #eb5757); 
+    background: linear-gradient(to right, #00000038, rgba(0, 0, 0, 0.575)),url(img/logotipos.jpg);
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.C-text_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin: 11%;
+}
