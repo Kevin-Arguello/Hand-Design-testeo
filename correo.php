@@ -12,6 +12,6 @@
 
     mail($destinatario, $asunto, $mensajeCompleto, $header);
 
-    header('loaction: index.html');
+    header('location: index.html');
 
 ?>
